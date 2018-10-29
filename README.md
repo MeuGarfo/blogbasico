@@ -1,7 +1,7 @@
-=== Doo ===
-Theme Name: Blog Básico
-Theme URI: https://github.com/aicoutodasilva/blogbasico
-Description: A beautiful two-columns WordPress theme
+# Blog Básico
+- Theme Name: Blog Básico
+- Theme URI: https://github.com/aicoutodasilva/blogbasico
+- Description: A beautiful two-columns WordPress theme
 Version: 0.0.1
 Author: Anderson Ismael
 Author URI: https://github.com/aicoutodasilva
