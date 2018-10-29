@@ -1,13 +1,5 @@
 # Blog Básico
-- Theme Name: Blog Básico
-- Theme URI: https://github.com/aicoutodasilva/blogbasico
-- Description: Um belo tema de duas colunas para WordPress
-- Author: Anderson Ismael
-- Author URI: https://github.com/aicoutodasilva
-- License: GNU General Public License v2 or later
-- License URI: http://www.gnu.org/licenses/gpl-2.0.html
-- Requires at least: 4.7
-- Tested up to: 4.9
+Um belo tema de duas colunas para WordPress 
 
 ## Licenças
 - Bootstrap
