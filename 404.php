@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package doo
+ * @package blogbasico
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 
       <section class="error-404 not-found">
         <header class="page-header">
-          <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'doo' ); ?></h1>
+          <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'blogbasico' ); ?></h1>
         </header><!-- .page-header -->
       </section><!-- .error-404 -->
 

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @package doo
+ * @package blogbasico
  */
 ?>
 <div id="content" class="site-content">
@@ -31,7 +31,7 @@ if ($blog_layout == 'left_sidebar') {
             if ( have_posts() ) :
 
               // archive page header
-              doo_page_header();
+              blogbasico_page_header();
 
               /* Start the Loop */
               while ( have_posts() ) : the_post();
@@ -46,9 +46,9 @@ if ($blog_layout == 'left_sidebar') {
               endwhile;
 
               if (get_theme_mod('blog_pagination') == 'navigation') {
-                doo_posts_navigation();
+                blogbasico_posts_navigation();
               } else {
-                doo_posts_pagination();
+                blogbasico_posts_pagination();
               }
 
             else :

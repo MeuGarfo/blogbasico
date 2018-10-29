@@ -41,5 +41,5 @@
   Sob Domínio Púbico nos EUA (https://www.wikiart.org/en/giorgio-de-chirico/the-red-tower-1913)
 
 - Tema Doo
-  Por themevs 1018
-  Sob licença MIT (https://br.wordpress.org/themes/doo/)
+  Por themevs 1018 (https://br.wordpress.org/themes/doo/)
+  Sob licença MIT (https://br.wordpress.org/themes/blogbasico/)

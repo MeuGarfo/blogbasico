@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package doo
+ * @package blogbasico
  */
 ?>
 
@@ -50,12 +50,12 @@
         ?>
 
         <div class="site-info-copyright <?php if (($show_social && !$social_url_empty) || ($show_menu && has_nav_menu('menu-2'))){?>have-site-info-nav<?php }?>">
-          <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'doo' ) ); ?>"><?php
-            printf( esc_html__( 'Proudly powered by %s', 'doo' ), 'WordPress' );
+          <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blogbasico' ) ); ?>"><?php
+            printf( esc_html__( 'Proudly powered by %s', 'blogbasico' ), 'WordPress' );
           ?></a>
           <span class="sep"> | </span>
           <?php
-            printf( esc_html__( 'Theme: %1$s by %2$s.', 'doo' ), 'Doo', '<a href="http://themevs.com/">ThemeVS</a>' );
+            printf( esc_html__( 'Theme: %1$s by %2$s.', 'blogbasico' ), 'blogbasico', '<a href="http://themevs.com/">Anderson Ismael</a>' );
           ?>
         </div>
     </div><!-- .site-info -->
@@ -63,7 +63,7 @@
 
 <?php
 $show_back_to_top = get_theme_mod('general_show_totop_btn', 1);
-if ($show_back_to_top) { 
+if ($show_back_to_top) {
 ?>
   <div id="back_top"><i class="fa fa-angle-up"></i></div>
 <?php

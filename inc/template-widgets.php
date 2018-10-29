@@ -2,18 +2,18 @@
 /**
  * Custom template widgets for this theme
  *
- * @package doo
+ * @package blogbasico
  */
  
-function doo_widgets_init() {
+function blogbasico_widgets_init() {
   register_sidebar( array(
-    'name'          => esc_html__( 'Sidebar', 'doo' ),
+    'name'          => esc_html__( 'Sidebar', 'blogbasico' ),
     'id'            => 'sidebar-1',
-    'description'   => esc_html__( 'Add widgets here.', 'doo' ),
+    'description'   => esc_html__( 'Add widgets here.', 'blogbasico' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
   ) );
 }
-add_action( 'widgets_init', 'doo_widgets_init' );
+add_action( 'widgets_init', 'blogbasico_widgets_init' );

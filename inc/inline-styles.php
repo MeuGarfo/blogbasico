@@ -2,10 +2,10 @@
 /**
  * custom stylesheet
  *
- * @package doo
+ * @package blogbasico
  */
 
-function doo_inline_styles() {
+function blogbasico_inline_styles() {
 
   $inline_styles = '';
 
@@ -108,7 +108,7 @@ a:active {
     ';
   }
 
-  wp_add_inline_style('doo-style', $inline_styles);
+  wp_add_inline_style('blogbasico-style', $inline_styles);
 
 }
-add_action('wp_enqueue_scripts', 'doo_inline_styles');
+add_action('wp_enqueue_scripts', 'blogbasico_inline_styles');

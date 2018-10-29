@@ -2,7 +2,7 @@
 /**
  * The template for displaying comments
  *
- * @package doo
+ * @package blogbasico
  */
 
 /*
@@ -26,13 +26,13 @@ if ( post_password_required() ) {
       if ( 1 === $comment_count ) {
         printf(
           /* translators: 1: title. */
-          esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'doo' ),
+          esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'blogbasico' ),
           '<span>' . get_the_title() . '</span>'
         );
       } else {
         printf( // WPCS: XSS OK.
           /* translators: 1: comment count number, 2: title. */
-          esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'doo' ) ),
+          esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'blogbasico' ) ),
           number_format_i18n( $comment_count ),
           '<span>' . get_the_title() . '</span>'
         );
@@ -43,16 +43,16 @@ if ( post_password_required() ) {
     <ol class="comment-list">
       <?php
         wp_list_comments( array(
-          'callback'=>'doo_list_comments'
+          'callback'=>'blogbasico_list_comments'
         ) );
       ?>
     </ol><!-- .comment-list -->
 
-    <?php doo_comments_navigation();
+    <?php blogbasico_comments_navigation();
 
     // If comments are closed and there are comments, let's leave a little note, shall we?
     if ( ! comments_open() ) : ?>
-      <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'doo' ); ?></p>
+      <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'blogbasico' ); ?></p>
     <?php
     endif;
 

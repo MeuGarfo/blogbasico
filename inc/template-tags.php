@@ -2,11 +2,11 @@
 /**
  * Custom template tags for this theme
  *
- * @package doo
+ * @package blogbasico
  */
 
-if (!function_exists('doo_entry_header')) {
-  function doo_entry_header() {
+if (!function_exists('blogbasico_entry_header')) {
+  function blogbasico_entry_header() {
     $show_date = get_theme_mod('blog_show_date', 1);
     $show_categories = get_theme_mod('blog_show_categories', 1);
     $show_comments_counter = get_theme_mod('blog_show_comments_counter', 1);
@@ -39,7 +39,7 @@ if (!function_exists('doo_entry_header')) {
         }
 
         if ($show_categories) {
-          $categories_list = get_the_category_list( esc_html__( ', ', 'doo' ) );
+          $categories_list = get_the_category_list( esc_html__( ', ', 'blogbasico' ) );
           if ( $categories_list ) {
             echo '<span class="cat-links">' . $categories_list. '</span>';
           }
@@ -49,11 +49,11 @@ if (!function_exists('doo_entry_header')) {
           if (! post_password_required() ) {
             if (comments_open()) {
               echo '<span class="comments-link"><a href="'.get_the_permalink().'#comments">';
-              comments_number(esc_html__('No Comments', 'doo'), esc_html__('1 Comment', 'doo'), esc_html__('% Comments', 'doo'));
+              comments_number(esc_html__('No Comments', 'blogbasico'), esc_html__('1 Comment', 'blogbasico'), esc_html__('% Comments', 'blogbasico'));
               echo '</a></span>';
             } else if (get_comments_number()) { 
               echo '<span class="comments-link"><a href="'.get_the_permalink().'#comments">';
-              comments_number('', esc_html__('1 Comment', 'doo'), esc_html__('% Comments', 'doo'));
+              comments_number('', esc_html__('1 Comment', 'blogbasico'), esc_html__('% Comments', 'blogbasico'));
               echo '</a></span>'; 
             }
           }
@@ -66,8 +66,8 @@ if (!function_exists('doo_entry_header')) {
   }
 }
 
-if (!function_exists('doo_entry_footer')) {
-  function doo_entry_footer() {
+if (!function_exists('blogbasico_entry_footer')) {
+  function blogbasico_entry_footer() {
     $show_tags = get_theme_mod('blog_show_tags', 1);
 
     if ($show_tags) {
@@ -88,17 +88,17 @@ if (!function_exists('doo_entry_footer')) {
   }
 }
 
-if (!function_exists('doo_posts_navigation')) {
-  function doo_posts_navigation() {
+if (!function_exists('blogbasico_posts_navigation')) {
+  function blogbasico_posts_navigation() {
     the_posts_navigation(array(
-      'prev_text' => '<i class="fa fa-caret-left"></i> '.esc_html__('Older posts','doo'),
-      'next_text'  => esc_html__('Newer posts','doo').' <i class="fa fa-caret-right"></i>'      
+      'prev_text' => '<i class="fa fa-caret-left"></i> '.esc_html__('Older posts','blogbasico'),
+      'next_text'  => esc_html__('Newer posts','blogbasico').' <i class="fa fa-caret-right"></i>'      
     ));
   }
 }
 
-if (!function_exists('doo_post_navigation')) {
-  function doo_post_navigation(){
+if (!function_exists('blogbasico_post_navigation')) {
+  function blogbasico_post_navigation(){
     the_post_navigation( array(
           'prev_text' => '<i class="fa fa-caret-left"></i> %title',
           'next_text' => '%title <i class="fa fa-caret-right"></i>'
@@ -106,17 +106,17 @@ if (!function_exists('doo_post_navigation')) {
   }
 }
 
-if (!function_exists('doo_comments_navigation')) {
-  function doo_comments_navigation(){
+if (!function_exists('blogbasico_comments_navigation')) {
+  function blogbasico_comments_navigation(){
     the_comments_navigation(array(
-      'prev_text' => '<i class="fa fa-caret-left"></i> '.esc_html__( 'Older comments' ,'doo'),
-      'next_text' => esc_html__( 'Newer comments' ,'doo').' <i class="fa fa-caret-right"></i>'
+      'prev_text' => '<i class="fa fa-caret-left"></i> '.esc_html__( 'Older comments' ,'blogbasico'),
+      'next_text' => esc_html__( 'Newer comments' ,'blogbasico').' <i class="fa fa-caret-right"></i>'
     ));
   }
 }
 
-if (!function_exists('doo_posts_pagination')) {
-  function doo_posts_pagination(){
+if (!function_exists('blogbasico_posts_pagination')) {
+  function blogbasico_posts_pagination(){
     the_posts_pagination(array(
       'prev_text' => '<i class="fa fa-caret-left"></i>',
       'next_text' => '<i class="fa fa-caret-right"></i>'
@@ -124,8 +124,8 @@ if (!function_exists('doo_posts_pagination')) {
   }
 }
 
-if (!function_exists('doo_about_the_author')) {
-  function doo_about_the_author() {
+if (!function_exists('blogbasico_about_the_author')) {
+  function blogbasico_about_the_author() {
     $author_ID = get_the_author_meta('ID');
     $author_email = get_the_author_meta('user_email');
     $author_display_name = get_the_author_meta('display_name');
@@ -140,13 +140,13 @@ if (!function_exists('doo_about_the_author')) {
       <div class="about-author-bio-wrap">
         <div class="about-author-name">
           <?php the_author_posts_link(); ?>
-          <span>(<?php the_author_posts(); esc_html_e(' Posts', 'doo'); ?>)</span>
+          <span>(<?php the_author_posts(); esc_html_e(' Posts', 'blogbasico'); ?>)</span>
         </div>
         <div class="about-author-bio">
           <?php the_author_meta('description'); ?>
         </div>
         <a href="<?php echo esc_url($author_posts_url); ?>" class="about-author-link">
-          <?php esc_html_e('View all author&rsquo;s posts', 'doo'); ?><i class="fa fa-caret-right"></i>
+          <?php esc_html_e('View all author&rsquo;s posts', 'blogbasico'); ?><i class="fa fa-caret-right"></i>
         </a>
       </div>
     </div>

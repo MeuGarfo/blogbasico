@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @package doo
+ * @package blogbasico
  */
 ?>
 
@@ -14,8 +14,8 @@
   <?php }?>
 
   <div class="post-content">
-    <?php doo_entry_header(); ?>
+    <?php blogbasico_entry_header(); ?>
 
-    <?php doo_entry_content();?>
+    <?php blogbasico_entry_content();?>
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->

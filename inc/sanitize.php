@@ -2,16 +2,16 @@
 /**
  * Data sanitization functions
  *
- * @package doo
+ * @package blogbasico
  */
 
 // URL (esc_url)
-function doo_sanitize_url($input) {
+function blogbasico_sanitize_url($input) {
   return esc_url_raw($input);
 }
 
 // Number field (intval)
-function doo_sanitize_number_intval($input) {
+function blogbasico_sanitize_number_intval($input) {
   if (is_numeric($input) && $input >= 1) {
     return intval($input);
   } else {
@@ -20,7 +20,7 @@ function doo_sanitize_number_intval($input) {
 }
 
 // Checkbox
-function doo_sanitize_checkbox( $input ){
+function blogbasico_sanitize_checkbox( $input ){
   if ( $input == 1 || $input == 'true' || $input === true ) {
     return 1;
   } else {
@@ -29,7 +29,7 @@ function doo_sanitize_checkbox( $input ){
 }
 
 // Blog pagination
-function doo_sanitize_blog_pagination( $input ) {
+function blogbasico_sanitize_blog_pagination( $input ) {
   if ( ! in_array( $input, array( 'pagination', 'navigation' ) ) ) {
     $input = 'pagination';
   }
@@ -37,7 +37,7 @@ function doo_sanitize_blog_pagination( $input ) {
 }
 
 // Blog layout
-function doo_sanitize_blog_layout($input) {
+function blogbasico_sanitize_blog_layout($input) {
   $valid = array(
     'right_sidebar' => 'Right sidebar',
     'left_sidebar' => 'Left sidebar',
@@ -51,7 +51,7 @@ function doo_sanitize_blog_layout($input) {
 }
 
 // Excerpt / Read more tag
-function doo_sanitize_blog_excerpt_type($input) {
+function blogbasico_sanitize_blog_excerpt_type($input) {
   $valid = array(
     'excerpt' => 'Excerpt',
     'more-tag' => 'Read More tag',

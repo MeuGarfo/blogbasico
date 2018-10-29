@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package doo
+ * @package blogbasico
  */
 
 // header

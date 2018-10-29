@@ -1,14 +1,14 @@
 <?php
 /**
- * doo Theme Customizer
+ * blogbasico Theme Customizer
  *
- * @package doo
+ * @package blogbasico
  */
 
-function doo_customize_register( $wp_customize ) {
+function blogbasico_customize_register( $wp_customize ) {
 
-  class doo_customize_number_control extends WP_Customize_Control {
-    public $type = 'doo_number_field';
+  class blogbasico_customize_number_control extends WP_Customize_Control {
+    public $type = 'blogbasico_number_field';
     public function render_content() {
       ?>
       <label>
@@ -23,7 +23,7 @@ function doo_customize_register( $wp_customize ) {
 
   $wp_customize->add_panel(
     'theme_options' ,array(
-    'title' => esc_html__('Theme Options', 'doo'),
+    'title' => esc_html__('Theme Options', 'blogbasico'),
     'description' => '',
     )
   );
@@ -34,7 +34,7 @@ function doo_customize_register( $wp_customize ) {
   $wp_customize->add_section(
     'colors_general',
     array(
-    'title' => esc_html__('Colors', 'doo'),
+    'title' => esc_html__('Colors', 'blogbasico'),
     'panel' => 'theme_options',
     'priority' => 1,
     )
@@ -52,7 +52,7 @@ function doo_customize_register( $wp_customize ) {
       $wp_customize,
       'theme_color',
       array(
-        'label' => esc_html__('Theme Color', 'doo'),
+        'label' => esc_html__('Theme Color', 'blogbasico'),
         'section' => 'colors_general',
       )
     )
@@ -64,7 +64,7 @@ function doo_customize_register( $wp_customize ) {
   $wp_customize->add_section(
     'general_settings_section',
     array(
-      'title' => esc_html__('General Settings', 'doo'),
+      'title' => esc_html__('General Settings', 'blogbasico'),
       'panel' => 'theme_options',
       'priority' => 2,
     )
@@ -73,7 +73,7 @@ function doo_customize_register( $wp_customize ) {
     'blog_pagination',
     array(
       'default' => 'pagination',
-      'sanitize_callback' => 'doo_sanitize_blog_pagination',
+      'sanitize_callback' => 'blogbasico_sanitize_blog_pagination',
     )
   );
   $wp_customize->add_control(
@@ -81,13 +81,13 @@ function doo_customize_register( $wp_customize ) {
       $wp_customize,
       'blog_pagination',
       array(
-        'label' => esc_html__('Blog Pagination or Navigation', 'doo'),
+        'label' => esc_html__('Blog Pagination or Navigation', 'blogbasico'),
         'section' => 'general_settings_section',
         'settings' => 'blog_pagination',
         'type' => 'radio',
         'choices' => array(
-          'pagination' => esc_html__('Pagination', 'doo'),
-          'navigation' => esc_html__('Navigation', 'doo'),
+          'pagination' => esc_html__('Pagination', 'blogbasico'),
+          'navigation' => esc_html__('Navigation', 'blogbasico'),
         ),
       )
     )
@@ -96,7 +96,7 @@ function doo_customize_register( $wp_customize ) {
     'header_title',
     array(
     'default' => false,
-    'sanitize_callback' => 'doo_sanitize_checkbox',
+    'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -104,7 +104,7 @@ function doo_customize_register( $wp_customize ) {
       $wp_customize,
       'header_title',
       array(
-        'label' => esc_html__('Hide Header Title Text', 'doo'),
+        'label' => esc_html__('Hide Header Title Text', 'blogbasico'),
         'section' => 'general_settings_section',
         'settings' => 'header_title',
         'type' => 'checkbox',
@@ -115,19 +115,19 @@ function doo_customize_register( $wp_customize ) {
     'blog_layout',
     array(
       'default' => 'right_sidebar',
-      'sanitize_callback' => 'doo_sanitize_blog_layout',
+      'sanitize_callback' => 'blogbasico_sanitize_blog_layout',
     )
   );
   $wp_customize->add_control(
     'blog_layout',
     array(
       'type' => 'select',
-      'label' => esc_html__('Blog Layout', 'doo'),
+      'label' => esc_html__('Blog Layout', 'blogbasico'),
       'section' => 'general_settings_section',
       'choices' => array(
-        'right_sidebar' => esc_html__('Right sidebar', 'doo'),
-        'left_sidebar' => esc_html__('Left sidebar', 'doo'),
-        'one_column' => esc_html__('One column', 'doo'),
+        'right_sidebar' => esc_html__('Right sidebar', 'blogbasico'),
+        'left_sidebar' => esc_html__('Left sidebar', 'blogbasico'),
+        'one_column' => esc_html__('One column', 'blogbasico'),
       ),
     )
   );
@@ -135,18 +135,18 @@ function doo_customize_register( $wp_customize ) {
     'blog_excerpt_type',
     array(
       'default' => 'excerpt',
-      'sanitize_callback' => 'doo_sanitize_blog_excerpt_type',
+      'sanitize_callback' => 'blogbasico_sanitize_blog_excerpt_type',
     )
   );
   $wp_customize->add_control(
     'blog_excerpt_type',
     array(
       'type' => 'select',
-      'label' => esc_html__('Use Excerpt or "Read More tag"', 'doo'),
+      'label' => esc_html__('Use Excerpt or "Read More tag"', 'blogbasico'),
       'section' => 'general_settings_section',
       'choices' => array(
-        'excerpt' => esc_html__('Excerpt', 'doo'),
-        'more-tag' => esc_html__('Read More tag', 'doo'),
+        'excerpt' => esc_html__('Excerpt', 'blogbasico'),
+        'more-tag' => esc_html__('Read More tag', 'blogbasico'),
       ),
     )
   );
@@ -154,15 +154,15 @@ function doo_customize_register( $wp_customize ) {
     'blog_excerpt_length',
     array(
       'default' => 40,
-      'sanitize_callback' => 'doo_sanitize_number_intval',
+      'sanitize_callback' => 'blogbasico_sanitize_number_intval',
     )
   );
   $wp_customize->add_control(
-    new doo_customize_number_control(
+    new blogbasico_customize_number_control(
       $wp_customize,
       'blog_excerpt_length',
       array(
-        'label' => esc_html__('Excerpt Length (Number of Words)', 'doo'),
+        'label' => esc_html__('Excerpt Length (Number of Words)', 'blogbasico'),
         'section' => 'general_settings_section',
         'settings' => 'blog_excerpt_length',
       )
@@ -172,14 +172,14 @@ function doo_customize_register( $wp_customize ) {
     'general_show_totop_btn',
     array(
       'default' => 1,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'general_show_totop_btn',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show "Back to top" button', 'doo'),
+      'label' => esc_html__('Show "Back to top" button', 'blogbasico'),
       'section' => 'general_settings_section',
     )
   );
@@ -187,14 +187,14 @@ function doo_customize_register( $wp_customize ) {
     'blog_images_hover_effects',
     array(
       'default' => 0,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'blog_images_hover_effects',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Enable hover effects when you hover on featured images', 'doo'),
+      'label' => esc_html__('Enable hover effects when you hover on featured images', 'blogbasico'),
       'section' => 'general_settings_section',
     )
   );
@@ -202,14 +202,14 @@ function doo_customize_register( $wp_customize ) {
     'blog_show_date',
     array(
       'default' => 1,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'blog_show_date',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show date', 'doo'),
+      'label' => esc_html__('Show date', 'blogbasico'),
       'section' => 'general_settings_section',
     )
   );
@@ -217,14 +217,14 @@ function doo_customize_register( $wp_customize ) {
     'blog_show_comments_counter',
     array(
       'default' => 1,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'blog_show_comments_counter',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show comments counter', 'doo'),
+      'label' => esc_html__('Show comments counter', 'blogbasico'),
       'section' => 'general_settings_section',
     )
   );
@@ -232,14 +232,14 @@ function doo_customize_register( $wp_customize ) {
     'blog_show_categories',
     array(
       'default' => 1,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'blog_show_categories',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show categories', 'doo'),
+      'label' => esc_html__('Show categories', 'blogbasico'),
       'section' => 'general_settings_section',
     )
   );
@@ -247,14 +247,14 @@ function doo_customize_register( $wp_customize ) {
     'blog_show_tags',
     array(
       'default' => 1,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'blog_show_tags',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show tags', 'doo'),
+      'label' => esc_html__('Show tags', 'blogbasico'),
       'section' => 'general_settings_section',
     )
   );
@@ -262,14 +262,14 @@ function doo_customize_register( $wp_customize ) {
     'single_show_post_nav',
     array(
       'default' => 1,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'single_show_post_nav',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show post navigation (single post page)', 'doo'),
+      'label' => esc_html__('Show post navigation (single post page)', 'blogbasico'),
       'section' => 'general_settings_section',
     )
   );
@@ -277,14 +277,14 @@ function doo_customize_register( $wp_customize ) {
     'single_show_about_author',
     array(
       'default' => 0,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'single_show_about_author',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show "About the author" block (single post page)', 'doo'),
+      'label' => esc_html__('Show "About the author" block (single post page)', 'blogbasico'),
       'section' => 'general_settings_section',
     )
   );
@@ -293,9 +293,9 @@ function doo_customize_register( $wp_customize ) {
   // Section: Social Media Icons 
   //----------------------------------------------------------------------------------
   $wp_customize->add_section(
-    'doo_social',
+    'blogbasico_social',
     array(
-      'title' => esc_html__('Social Links & RSS', 'doo'),
+      'title' => esc_html__('Social Links & RSS', 'blogbasico'),
       'panel' => 'theme_options',
       'priority' => 3,
     )
@@ -304,14 +304,14 @@ function doo_customize_register( $wp_customize ) {
     'social_twitter',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_twitter',
     array(
-      'label' => esc_html__('Twitter URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Twitter URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_twitter',
       'type' => 'text',
     )
@@ -320,14 +320,14 @@ function doo_customize_register( $wp_customize ) {
     'social_facebook',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_facebook',
     array(
-      'label' => esc_html__('Facebook URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Facebook URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_facebook',
       'type' => 'text',
     )
@@ -336,14 +336,14 @@ function doo_customize_register( $wp_customize ) {
     'social_google-plus',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_google-plus',
     array(
-      'label' => esc_html__('Google+ URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Google+ URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_google-plus',
       'type' => 'text',
     )
@@ -352,14 +352,14 @@ function doo_customize_register( $wp_customize ) {
     'social_pinterest',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_pinterest',
     array(
-      'label' => esc_html__('Pinterest URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Pinterest URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_pinterest',
       'type' => 'text',
     )
@@ -368,14 +368,14 @@ function doo_customize_register( $wp_customize ) {
     'social_vk',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_vk',
     array(
-      'label' => esc_html__('VK URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('VK URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_vk',
       'type' => 'text',
     )
@@ -384,14 +384,14 @@ function doo_customize_register( $wp_customize ) {
     'social_flickr',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_flickr',
     array(
-      'label' => esc_html__('Flickr URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Flickr URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_flickr',
       'type' => 'text',
     )
@@ -400,14 +400,14 @@ function doo_customize_register( $wp_customize ) {
     'social_instagram',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_instagram',
     array(
-      'label' => esc_html__('Instagram URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Instagram URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_instagram',
       'type' => 'text',
     )
@@ -416,14 +416,14 @@ function doo_customize_register( $wp_customize ) {
     'social_500px',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_500px',
     array(
-      'label' => esc_html__('500px URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('500px URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_500px',
       'type' => 'text',
     )
@@ -432,14 +432,14 @@ function doo_customize_register( $wp_customize ) {
     'social_youtube',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_youtube',
     array(
-      'label' => esc_html__('YouTube URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('YouTube URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_youtube',
       'type' => 'text',
     )
@@ -448,14 +448,14 @@ function doo_customize_register( $wp_customize ) {
     'social_vimeo',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_vimeo',
     array(
-      'label' => esc_html__('Vimeo URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Vimeo URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_vimeo',
       'type' => 'text',
     )
@@ -464,14 +464,14 @@ function doo_customize_register( $wp_customize ) {
     'social_soundcloud',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_soundcloud',
     array(
-      'label' => esc_html__('SoundCloud URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('SoundCloud URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_soundcloud',
       'type' => 'text',
     )
@@ -480,14 +480,14 @@ function doo_customize_register( $wp_customize ) {
     'social_dribbble',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_dribbble',
     array(
-      'label' => esc_html__('Dribbble URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Dribbble URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_dribbble',
       'type' => 'text',
     )
@@ -496,14 +496,14 @@ function doo_customize_register( $wp_customize ) {
     'social_behance',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_behance',
     array(
-      'label' => esc_html__('Behance URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('Behance URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_behance',
       'type' => 'text',
     )
@@ -512,14 +512,14 @@ function doo_customize_register( $wp_customize ) {
     'social_github',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_github',
     array(
-      'label' => esc_html__('GitHub URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('GitHub URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_github',
       'type' => 'text',
     )
@@ -528,14 +528,14 @@ function doo_customize_register( $wp_customize ) {
     'social_rss',
     array(
       'default' => '',
-      'sanitize_callback' => 'doo_sanitize_url',
+      'sanitize_callback' => 'blogbasico_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_rss',
     array(
-      'label' => esc_html__('RSS URL', 'doo'),
-      'section' => 'doo_social',
+      'label' => esc_html__('RSS URL', 'blogbasico'),
+      'section' => 'blogbasico_social',
       'settings' => 'social_rss',
       'type' => 'text',
     )
@@ -545,9 +545,9 @@ function doo_customize_register( $wp_customize ) {
   // Section: Footer
   //----------------------------------------------------------------------------------
   $wp_customize->add_section(
-    'doo_footer',
+    'blogbasico_footer',
     array(
-      'title' => esc_html__('Footer', 'doo'),
+      'title' => esc_html__('Footer', 'blogbasico'),
       'panel' => 'theme_options',
       'priority' => 4,
     )
@@ -556,31 +556,31 @@ function doo_customize_register( $wp_customize ) {
     'footer_show_social',
     array(
       'default' => 0,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'footer_show_social',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show "Social Links & RSS" block', 'doo'),
-      'section' => 'doo_footer',
+      'label' => esc_html__('Show "Social Links & RSS" block', 'blogbasico'),
+      'section' => 'blogbasico_footer',
     )
   );
   $wp_customize->add_setting(
     'footer_show_menu',
     array(
       'default' => 0,
-      'sanitize_callback' => 'doo_sanitize_checkbox',
+      'sanitize_callback' => 'blogbasico_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'footer_show_menu',
     array(
       'type' => 'checkbox',
-      'label' => esc_html__('Show "Footer menu" block', 'doo'),
-      'section' => 'doo_footer',
+      'label' => esc_html__('Show "Footer menu" block', 'blogbasico'),
+      'section' => 'blogbasico_footer',
     )
   );
 }
-add_action('customize_register', 'doo_customize_register');
+add_action('customize_register', 'blogbasico_customize_register');

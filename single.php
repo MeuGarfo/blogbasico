@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts
  *
- * @package doo
+ * @package blogbasico
  */
 
 get_header(); ?>
@@ -41,32 +41,32 @@ if ($blog_layout == 'left_sidebar') {
               <?php }?>
 
               <div class="post-content">
-                <?php doo_entry_header(); ?>
+                <?php blogbasico_entry_header(); ?>
 
                 <div class="entry-content clearfix">
                   <?php
                   the_content();
 
                   wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'doo' ),
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogbasico' ),
                     'after'  => '</div>',
                   ) );
                   ?>
                 </div><!-- .entry-content -->
                   
-                <?php doo_entry_footer(); ?>
+                <?php blogbasico_entry_footer(); ?>
               </div>
             </article><!-- #post-<?php the_ID(); ?> -->
 
             <?php
               $show_about_author = get_theme_mod('single_show_about_author', 0);
               if (!post_password_required() && $show_about_author) {
-                doo_about_the_author();
+                blogbasico_about_the_author();
               }
 
               $show_post_nav = get_theme_mod('single_show_post_nav', 1);
               if ($show_post_nav) {
-                doo_post_navigation();
+                blogbasico_post_navigation();
               }
 
               if ( comments_open() || get_comments_number() ) :

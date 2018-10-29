@@ -2,7 +2,7 @@
 /**
  * The template for displaying all pages
  *
- * @package doo
+ * @package blogbasico
  */
 
 get_header(); ?>
@@ -50,7 +50,7 @@ if ($blog_layout == 'left_sidebar') {
                       the_content();
 
                       wp_link_pages( array(
-                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'doo' ),
+                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogbasico' ),
                         'after'  => '</div>',
                       ) );
                     ?>

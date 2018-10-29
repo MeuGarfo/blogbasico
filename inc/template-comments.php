@@ -4,16 +4,16 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package doo
+ * @package blogbasico
  */
  
-function doo_list_comments($comment,$args,$depth){
+function blogbasico_list_comments($comment,$args,$depth){
   if ( $comment->comment_type=='pingback' || $comment->comment_type=='trackback' ){
 ?>
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
     <div class="comment-body">
-      <?php echo esc_html__( 'Pingback:', 'doo' ); ?> <?php comment_author_link(); ?>
-      <?php edit_comment_link( esc_html__( '(Edit)', 'doo' ), '<div class="comment-meta"><span class="edit-link">', '</span></div>' ); ?>
+      <?php echo esc_html__( 'Pingback:', 'blogbasico' ); ?> <?php comment_author_link(); ?>
+      <?php edit_comment_link( esc_html__( '(Edit)', 'blogbasico' ), '<div class="comment-meta"><span class="edit-link">', '</span></div>' ); ?>
     </div>
 <?php
   }else{  
@@ -25,11 +25,11 @@ function doo_list_comments($comment,$args,$depth){
                 <div class="fn"><?php echo get_comment_author_link();?></div>
                 
                 <div class="comment-meta clearfix">            
-                    <span class="comment-metadata"><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( esc_html_x( '%1$s at %2$s', '1: date, 2: time', 'doo' ), get_comment_date(), get_comment_time() ); ?></time></span>
-                    <?php edit_comment_link( esc_html__( '(Edit)', 'doo' ), '<span class="edit-link">', '</span>' ); ?>
+                    <span class="comment-metadata"><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( esc_html_x( '%1$s at %2$s', '1: date, 2: time', 'blogbasico' ), get_comment_date(), get_comment_time() ); ?></time></span>
+                    <?php edit_comment_link( esc_html__( '(Edit)', 'blogbasico' ), '<span class="edit-link">', '</span>' ); ?>
     
                     <?php if ( '0' == $comment->comment_approved ) : ?>
-                    <p class="comment-awaiting-moderation"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'doo' ); ?></p>
+                    <p class="comment-awaiting-moderation"><?php echo esc_html__( 'Your comment is awaiting moderation.', 'blogbasico' ); ?></p>
                     <?php endif; ?>
                 </div>
             </div>
@@ -44,27 +44,27 @@ function doo_list_comments($comment,$args,$depth){
   }
 }
 
-function doo_comment_form_default_fields( $fields ) {
+function blogbasico_comment_form_default_fields( $fields ) {
   $req = get_option( 'require_name_email' );
   $commenter = wp_get_current_commenter();
   $aria_req = ( $req ? " aria-required='true'" : '' );
-  $fields['author'] = '<div class="comment-item"><input id="author" type="text" aria-required="true" size="22" value="'.esc_attr($commenter['comment_author']).'" name="author" '.$aria_req.' placeholder="'.esc_attr__('Your Name','doo').' '.($req?'*':'').'" /></div>';
-  $fields['email'] = '<div class="comment-item"><input id="email" type="text" aria-required="true" size="22" value="'.esc_attr($commenter['comment_author_email']).'" name="email" '.$aria_req.' placeholder="'.esc_attr__('Your Email','doo').' '.($req?'*':'').'" /></div>';
-  $fields['url'] = '<div class="comment-item"><input id="url" type="text" aria-required="true" size="22" value="'.esc_url($commenter['comment_author_url']).'" name="url" placeholder="'.esc_attr__('Your Website','doo').'" /></div>';
+  $fields['author'] = '<div class="comment-item"><input id="author" type="text" aria-required="true" size="22" value="'.esc_attr($commenter['comment_author']).'" name="author" '.$aria_req.' placeholder="'.esc_attr__('Your Name','blogbasico').' '.($req?'*':'').'" /></div>';
+  $fields['email'] = '<div class="comment-item"><input id="email" type="text" aria-required="true" size="22" value="'.esc_attr($commenter['comment_author_email']).'" name="email" '.$aria_req.' placeholder="'.esc_attr__('Your Email','blogbasico').' '.($req?'*':'').'" /></div>';
+  $fields['url'] = '<div class="comment-item"><input id="url" type="text" aria-required="true" size="22" value="'.esc_url($commenter['comment_author_url']).'" name="url" placeholder="'.esc_attr__('Your Website','blogbasico').'" /></div>';
   return $fields;
 }
-add_filter( 'comment_form_default_fields', 'doo_comment_form_default_fields' );
+add_filter( 'comment_form_default_fields', 'blogbasico_comment_form_default_fields' );
 
-function doo_comment_form_field_comment( $comment_field ) {
+function blogbasico_comment_form_field_comment( $comment_field ) {
   $req = get_option( 'require_name_email' );
-  $comment_field = '<div class="comment-item"><textarea id="comment" name="comment" placeholder="'.esc_attr__('Your comment','doo').' '.($req?'*':'').'" /></textarea></div>';
+  $comment_field = '<div class="comment-item"><textarea id="comment" name="comment" placeholder="'.esc_attr__('Your comment','blogbasico').' '.($req?'*':'').'" /></textarea></div>';
   return $comment_field;
 }
-add_filter( 'comment_form_field_comment', 'doo_comment_form_field_comment' );
+add_filter( 'comment_form_field_comment', 'blogbasico_comment_form_field_comment' );
 
-function doo_comment_form_defaults($defaults){
+function blogbasico_comment_form_defaults($defaults){
   $defaults['comment_notes_before'] = '';
   $defaults['comment_notes_after'] = '';
   return $defaults;
 }
-add_filter( 'comment_form_defaults', 'doo_comment_form_defaults' );
+add_filter( 'comment_form_defaults', 'blogbasico_comment_form_defaults' );

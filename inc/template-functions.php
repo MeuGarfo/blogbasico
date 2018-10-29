@@ -2,11 +2,11 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package doo
+ * @package blogbasico
  */
 
-if (!function_exists('doo_entry_content')) {
-  function doo_entry_content() {
+if (!function_exists('blogbasico_entry_content')) {
+  function blogbasico_entry_content() {
     $excerpt_type = get_theme_mod('blog_excerpt_type', 'excerpt');
     if ($excerpt_type == 'excerpt') {
       ?>
@@ -26,7 +26,7 @@ if (!function_exists('doo_entry_content')) {
         <?php
         the_content( sprintf(
           wp_kses(
-            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'doo' ),
+            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blogbasico' ),
             array(
               'span' => array(
                 'class' => array(),
@@ -44,8 +44,8 @@ if (!function_exists('doo_entry_content')) {
   }
 }
 
-if (!function_exists('doo_page_header')) {
-  function doo_page_header(){
+if (!function_exists('blogbasico_page_header')) {
+  function blogbasico_page_header(){
     // author page
     if (is_author()) {
 ?>
@@ -70,7 +70,7 @@ if (!function_exists('doo_page_header')) {
     } else if (is_search()) { 
 ?>
       <header class="page-header">
-        <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'doo' ), '<span>' . get_search_query() . '</span>' );?></h1>
+        <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'blogbasico' ), '<span>' . get_search_query() . '</span>' );?></h1>
       </header><!-- .page-header -->
 <?php
     // archive page
@@ -84,8 +84,8 @@ if (!function_exists('doo_page_header')) {
   }
 }
 
-if (!function_exists('doo_excerpt_length')) {
-  function doo_excerpt_length($length) {
+if (!function_exists('blogbasico_excerpt_length')) {
+  function blogbasico_excerpt_length($length) {
     $excerpt_length = get_theme_mod('blog_excerpt_length', 40);
     if ($excerpt_length) {
       $excerpt_length = intval($excerpt_length);
@@ -95,10 +95,10 @@ if (!function_exists('doo_excerpt_length')) {
     return $excerpt_length;
   }
 }
-add_filter('excerpt_length', 'doo_excerpt_length');
+add_filter('excerpt_length', 'blogbasico_excerpt_length');
 
-if (!function_exists('doo_editor_style')) {
-  function doo_editor_style() {
+if (!function_exists('blogbasico_editor_style')) {
+  function blogbasico_editor_style() {
 
     // add stylesheets
     add_editor_style(array(
@@ -108,4 +108,4 @@ if (!function_exists('doo_editor_style')) {
 
   }
 }
-add_action('init', 'doo_editor_style');
+add_action('init', 'blogbasico_editor_style');

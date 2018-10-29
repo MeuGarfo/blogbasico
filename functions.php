@@ -2,16 +2,16 @@
 /**
  * Functions and definitions
  *
- * @package doo
+ * @package blogbasico
  */
 
-if (!function_exists('doo_setup')) {
-  function doo_setup() {
+if (!function_exists('blogbasico_setup')) {
+  function blogbasico_setup() {
     /*
      * Make theme available for translation.
      * Translations can be filed in the /languages/ directory.
      */
-    load_theme_textdomain('doo', get_template_directory().'/languages');
+    load_theme_textdomain('blogbasico', get_template_directory().'/languages');
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
@@ -33,8 +33,8 @@ if (!function_exists('doo_setup')) {
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
-      'menu-1' => esc_html__('Main menu', 'doo'),
-      'menu-2' => esc_html__('Footer menu', 'doo')
+      'menu-1' => esc_html__('Main menu', 'blogbasico'),
+      'menu-2' => esc_html__('Footer menu', 'blogbasico')
     ));
 
     /*
@@ -51,7 +51,7 @@ if (!function_exists('doo_setup')) {
     ));
     
     // Set up the WordPress core custom background feature.
-    add_theme_support('custom-background', apply_filters('doo_custom_background_args', array(
+    add_theme_support('custom-background', apply_filters('blogbasico_custom_background_args', array(
       'default-color' => 'f1f1f1',
       'default-image' => '',
     )) );
@@ -67,7 +67,7 @@ if (!function_exists('doo_setup')) {
     ));
   }
 }
-add_action('after_setup_theme', 'doo_setup');
+add_action('after_setup_theme', 'blogbasico_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -76,16 +76,16 @@ add_action('after_setup_theme', 'doo_setup');
  *
  * @global int $content_width
  */
-function doo_content_width() {
-  $GLOBALS['content_width'] = apply_filters('doo_content_width', 690);
+function blogbasico_content_width() {
+  $GLOBALS['content_width'] = apply_filters('blogbasico_content_width', 690);
 }
-add_action('after_setup_theme', 'doo_content_width', 0);
+add_action('after_setup_theme', 'blogbasico_content_width', 0);
 
 /**
  * Enqueue styles.
  */
-if (!function_exists('doo_styles')) {
-  function doo_styles() {
+if (!function_exists('blogbasico_styles')) {
+  function blogbasico_styles() {
 
     // google fonts
     wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array(), '1.0.34');
@@ -101,16 +101,16 @@ if (!function_exists('doo_styles')) {
     wp_enqueue_style('font-awesome', get_template_directory_uri().'/assets/font-awesome/css/font-awesome.min.css', array(), '4.7.0');
 
     // main stylesheet
-    wp_enqueue_style('doo-style', get_stylesheet_directory_uri().'/style.css', array(), '1.0.34');
+    wp_enqueue_style('blogbasico-style', get_stylesheet_directory_uri().'/style.css', array(), '1.0.34');
   }
 }
-add_action('wp_enqueue_scripts', 'doo_styles');
+add_action('wp_enqueue_scripts', 'blogbasico_styles');
 
 /**
  * Enqueue scripts.
  */
-if (!function_exists('doo_scripts')) {
-  function doo_scripts() {
+if (!function_exists('blogbasico_scripts')) {
+  function blogbasico_scripts() {
 
     // html5shiv.js (for IE)
     wp_enqueue_script('html5shiv', get_template_directory_uri().'/assets/js/html5shiv.min.js', array(), '3.7.3', false);
@@ -127,7 +127,7 @@ if (!function_exists('doo_scripts')) {
     wp_enqueue_script('ie10-viewport-bug-workaround', get_template_directory_uri().'/assets/js/ie10-viewport-bug-workaround.js', array(), '1.3.16', true);
     
     // theme js
-    wp_enqueue_script('doo-theme', get_template_directory_uri().'/assets/js/theme.js', array('jquery'), '1.0.34', true);
+    wp_enqueue_script('blogbasico-theme', get_template_directory_uri().'/assets/js/theme.js', array('jquery'), '1.0.34', true);
 
     // comments
     if ( is_singular() && comments_open() && get_option('thread_comments')) {
@@ -135,7 +135,7 @@ if (!function_exists('doo_scripts')) {
     }
   }
 }
-add_action('wp_enqueue_scripts', 'doo_scripts');
+add_action('wp_enqueue_scripts', 'blogbasico_scripts');
 
 /**
  * Custom template widgets for this theme.

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @package doo
+ * @package blogbasico
  */
 ?>
 
@@ -14,7 +14,7 @@
   <?php }?>
 
   <div class="post-content">
-    <?php doo_entry_header(); ?>
+    <?php blogbasico_entry_header(); ?>
 
     <div class="entry-content clearfix">
       <?php
@@ -34,12 +34,12 @@
       };
 
       wp_link_pages( array(
-        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'doo' ),
+        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogbasico' ),
         'after'  => '</div>',
       ) );
       ?>
     </div><!-- .entry-content -->
       
-    <?php doo_entry_footer(); ?>
+    <?php blogbasico_entry_footer(); ?>
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->
