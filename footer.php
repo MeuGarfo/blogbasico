@@ -55,7 +55,7 @@
           ?></a>
           <span class="sep"> | </span>
           <?php
-            printf( esc_html__( 'Theme: %1$s by %2$s.', 'blogbasico' ), 'Blog Básico', '<a href="https://github.com/aicoutodasilva">Anderson Ismael</a>' );
+            printf( esc_html__( 'Theme: %1$s by %2$s.', 'blogbasico' ), 'Blog B&aacute;sico', '<a href="https://github.com/aicoutodasilva">Anderson Ismael</a>' );
           ?>
         </div>
     </div><!-- .site-info -->
