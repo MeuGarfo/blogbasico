@@ -2,14 +2,12 @@
 Um belo tema de duas colunas para WordPress 
 
 ## Licenças
-- Bootstrap
-  http://getbootstrap.com
+- [Bootstrap](http://getbootstrap.com)
   Copyright 2011-2016 Twitter, Inc.
   Sob licença MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-- Font Awesome
-  By @davegandy - http://fontawesome.io - @fontawesome
-  Licença - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+- [Font Awesome](http://fontawesome.io)
+  [Licença](http://fontawesome.io/license) (Font: SIL OFL 1.1, CSS: MIT License)
 
 - Open Sans(Font)
   https://www.google.com/fonts/specimen/Open+Sans Apache License, version 2.0
