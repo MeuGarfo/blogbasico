@@ -16,6 +16,9 @@
   <div class="post-content">
     <?php blogbasico_entry_header(); ?>
 
-    <?php blogbasico_entry_content();?>
+    <?php 
+    if(!is_home()){
+    blogbasico_entry_content();
+    }?>
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->
