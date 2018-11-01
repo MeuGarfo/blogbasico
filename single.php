@@ -34,11 +34,11 @@ if ($blog_layout == 'left_sidebar') {
             ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-              <?php if (has_post_thumbnail()) {?> 
+              <!---<?php if (has_post_thumbnail()) {?> 
                 <div class="post-media">
                   <?php the_post_thumbnail();?>
                 </div>
-              <?php }?>
+              <?php }?>-->
 
               <div class="post-content">
                 <?php blogbasico_entry_header(); ?>
