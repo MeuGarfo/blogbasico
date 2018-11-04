@@ -54,6 +54,8 @@ if ($blog_layout == 'left_sidebar') {
                   ?>
                 </div><!-- .entry-content -->
                   
+
+
                 <?php blogbasico_entry_footer(); ?>
               </div>
             </article><!-- #post-<?php the_ID(); ?> -->
