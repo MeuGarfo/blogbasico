@@ -88,7 +88,7 @@ if (!function_exists('blogbasico_styles')) {
   function blogbasico_styles() {
 
     // google fonts
-    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array(), '1.0.34');
+    //wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array(), '1.0.34');
 
     // bootstrap
     wp_enqueue_style('bootstrap', get_template_directory_uri().'/assets/bootstrap/css/bootstrap.min.css', array(), '3.3.7');
