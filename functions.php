@@ -69,6 +69,7 @@ if (!function_exists('blogbasico_setup')) {
 }
 add_action('after_setup_theme', 'blogbasico_setup');
 
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -156,6 +157,19 @@ require_once get_template_directory().'/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require_once get_template_directory().'/inc/template-functions.php';
+
+//remover titulo
+add_filter( 'document_title_parts', function( $title )
+{
+    if ( is_home() || is_front_page() )
+        unset( $title['title'] ); /** Remove title name */
+
+    if ( is_single() )
+        unset( $title['site'] ); /** Remove site name */
+
+    return $title;
+
+}, 10, 1 );
 
 /**
  * Customizer additions.
